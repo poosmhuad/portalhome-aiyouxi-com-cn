@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://poosmhuad.github.io/portalhome-aiyouxi-com-cn/sitemap.xml
