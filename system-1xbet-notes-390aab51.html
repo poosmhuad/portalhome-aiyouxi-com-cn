@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1xbet · 站点介绍与使用说明</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, Helvetica, sans-serif;
+      background-color: #f6f7fb;
+      color: #1e2633;
+      line-height: 1.6;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(145deg, #0f141e, #1b2330);
+      padding: 4rem 2rem 3.5rem;
+      text-align: center;
+      color: #eaeef5;
+      border-bottom: 3px solid #d4af37;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 span {
+      color: #d4af37;
+      font-weight: 600;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0.6rem auto 1.2rem;
+      font-size: 1.1rem;
+      color: #bdc9db;
+    }
+
+    .hero .tagline {
+      display: inline-block;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 0.3rem 1.2rem;
+      border-radius: 32px;
+      font-size: 0.9rem;
+      color: #d4af37;
+    }
+
+    /* 浅色正文区 */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .intro-card {
+      background: #ffffff;
+      padding: 2.5rem 2.2rem;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      margin-bottom: 2.8rem;
+      transition: box-shadow 0.25s;
+    }
+
+    .intro-card:hover {
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .intro-card h2 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      color: #111a28;
+      border-left: 5px solid #d4af37;
+      padding-left: 1rem;
+    }
+
+    .intro-card p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 1.8rem;
+      margin: 2rem 0 0.5rem;
+    }
+
+    .highlight-item {
+      background: #f8faff;
+      padding: 1.4rem 1.6rem;
+      border-radius: 18px;
+      border: 1px solid #eaeef5;
+      transition: border-color 0.2s;
+    }
+
+    .highlight-item:hover {
+      border-color: #d4af37;
+    }
+
+    .highlight-item h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #1b2330;
+    }
+
+    .highlight-item h3::before {
+      content: "▸ ";
+      color: #d4af37;
+      font-weight: 600;
+    }
+
+    .highlight-item p {
+      font-size: 0.95rem;
+      color: #3e4a5c;
+    }
+
+    .scenario-box {
+      background: #ffffff;
+      padding: 2rem 2.2rem;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      margin-bottom: 2.8rem;
+    }
+
+    .scenario-box h2 {
+      font-size: 1.7rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      color: #111a28;
+    }
+
+    .scenario-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.5rem;
+    }
+
+    .scenario-box li {
+      padding: 0.7rem 0 0.7rem 1.8rem;
+      position: relative;
+      border-bottom: 1px solid #f0f2f6;
+    }
+
+    .scenario-box li:last-child {
+      border-bottom: none;
+    }
+
+    .scenario-box li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #d4af37;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .faq-mini {
+      background: #ffffff;
+      padding: 2rem 2.2rem;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      margin-bottom: 2rem;
+    }
+
+    .faq-mini h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 1.4rem;
+      color: #111a28;
+      border-bottom: 2px solid #eef1f8;
+      padding-bottom: 0.6rem;
+    }
+
+    .qa-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .qa-item strong {
+      display: block;
+      font-weight: 500;
+      color: #1b2330;
+      margin-bottom: 0.25rem;
+    }
+
+    .qa-item p {
+      margin-left: 0.6rem;
+      color: #3b4a5e;
+    }
+
+    .access-note {
+      background: #f3f6fe;
+      border-radius: 20px;
+      padding: 1.6rem 2rem;
+      margin-top: 1.8rem;
+      border-left: 4px solid #d4af37;
+      font-size: 0.95rem;
+    }
+
+    .access-note a {
+      color: #1155aa;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px dotted #1155aa;
+      transition: color 0.2s, border-bottom-color 0.2s;
+    }
+
+    .access-note a:hover {
+      color: #d4af37;
+      border-bottom-color: #d4af37;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #7f8a9b;
+      margin-top: 3rem;
+      border-top: 1px solid #e5e9f0;
+      padding-top: 1.8rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 720px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .highlight-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .intro-card,
+      .scenario-box,
+      .faq-mini,
+      .access-note {
+        padding: 1.6rem 1.2rem;
+      }
+
+      .container {
+        padding: 1.5rem 0.8rem 3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 3rem 1rem 2.5rem;
+      }
+
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <header class="hero">
+    <h1>关于 <span>1xbet</span> 的一些说明</h1>
+    <p>一个聚合了体育赛事、娱乐游戏与数字服务的综合性平台。我们尝试从使用场景与可信角度，为感兴趣的朋友提供一份简洁的参考。</p>
+    <span class="tagline">站点介绍 · 亮点速览 · 使用视角</span>
+  </header>
+
+  <!-- 正文区 -->
+  <main class="container">
+
+    <!-- 介绍摘要卡片 -->
+    <section class="intro-card">
+      <h2>站点简介：它是什么？</h2>
+      <p>如果你平时有接触体育赛事、电子竞技或者各类娱乐游戏，或许会注意到一个名字——<a href="https://system-1xbet.com" style="color:#1155aa; font-weight:500; text-decoration:none; border-bottom:1px dotted #1155aa;">1xbet</a>。它并非一个简单的游戏页面，而是一个整合了实时数据、投注选项以及多种数字服务的在线平台。无论是足球、篮球还是网球，亦或是电子竞技项目，你都能在这里找到对应的数据与玩法。</p>
+      <p>值得注意的是，平台本身面向成年人，且不同地区对于在线娱乐服务的监管政策存在差异。在了解或使用前，请务必确认当地法规是否允许，并保持理性认知。</p>
+    </section>
+
+    <!-- 亮点 + 特点（卡片网格） -->
+    <section class="intro-card" style="margin-bottom:2.8rem;">
+      <h2>功能亮点速览</h2>
+      <div class="highlight-grid">
+        <div class="highlight-item">
+          <h3>赛事覆盖面广</h3>
+          <p>从主流足球联赛到小众极限运动，从国际电竞赛事到虚拟体育，内容库相对丰富，能满足多种兴趣偏好。</p>
+        </div>
+        <div class="highlight-item">
+          <h3>界面与数据流</h3>
+          <p>采用深色与金色点缀的视觉风格，数据更新频率较高，比赛过程中可以快速查看实时比分、统计等基础信息。</p>
+        </div>
+        <div class="highlight-item">
+          <h3>多端适配体验</h3>
+          <p>无论是电脑浏览器还是移动设备，页面布局都会自动调整，核心功能在手机上同样流畅可用。</p>
+        </div>
+        <div class="highlight-item">
+          <h3>多种语言与支付</h3>
+          <p>平台支持多种语言界面与常见支付方式，方便不同地区的用户根据自身习惯完成账户操作。</p>
+        </div>
+      </div>
+      <p style="margin-top:1.2rem; font-size:0.9rem; color:#4f5f72;">以上亮点基于平台公开信息整理，具体功能以实际页面为准。</p>
+    </section>
+
+    <!-- 使用建议 / 场景 -->
+    <section class="scenario-box">
+      <h2>使用场景与建议</h2>
+      <ul>
+        <li><strong>体育爱好者：</strong>如果你习惯在比赛期间关注实时赔率变化，或者想对比不同赛事的即时数据，<a href="https://system-1xbet.com" style="color:#1155aa; font-weight:500; text-decoration:none; border-bottom:1px dotted #1155aa;">1xbet</a> 提供了一种相对集中的信息视图。</li>
+        <li><strong>电子竞技观众：</strong>对于 CS:GO、Dota 2、英雄联盟等热门项目，平台设有专门板块，赛前数据与比赛进程均可浏览。</li>
+        <li><strong>偶尔探索的用户：</strong>如果你只是好奇或想了解其基本结构，可以先浏览页面中的规则说明与常见问题，不必急于注册。</li>
+        <li><strong>理性参与，保持界限：</strong>无论出于什么目的使用，都建议提前设置时间与金额限制。娱乐归娱乐，不要影响正常生活节奏。</li>
+      </ul>
+      <div class="access-note">
+        <strong>📌 可信但克制的访问说明</strong><br>
+        本站（<a href="https://system-1xbet.com">1xbet</a>）作为一个信息展示与入口页，不鼓励无节制的访问行为。请确保你已年满法定年龄，并在了解相关风险后再做决定。本页面仅提供客观介绍，不构成任何诱导或建议。
+      </div>
+    </section>
+
+    <!-- FAQ 摘要（轻量） -->
+    <section class="faq-mini">
+      <h2>常见疑问摘要</h2>
+      <div class="qa-item">
+        <strong>Q：这个平台是免费使用的吗？</strong>
+        <p>A：浏览页面、查看数据通常是免费的，但部分互动功能（如参与特定活动）可能需要注册并遵循对应规则。</p>
+      </div>
+      <div class="qa-item">
+        <strong>Q：我的个人信息安全吗？</strong>
+        <p>A：平台采用行业常见的加密技术保护数据传输，但任何在线服务都无法保证绝对安全，建议使用强密码并开启双重验证（如支持）。</p>
+      </div>
+      <div class="qa-item">
+        <strong>Q：遇到访问限制怎么办？</strong>
+        <p>A：不同国家或地区对这类平台有不同规定。如果无法访问，请先检查当地网络政策，不要使用非法手段突破限制。</p>
+      </div>
+      <p style="margin-top:1rem; font-size:0.9rem; color:#5f6d7e;">更多问题可以直接浏览平台内的帮助中心或联系客服（如果可用）。</p>
+    </section>
+
+    <div class="footer-note">
+      <p>本页面为产品说明式介绍，内容基于公开信息整理。请始终遵守当地法律并保持理性判断。</p>
+      <p style="margin-top:0.4rem;">© 2025 · 仅供参考</p>
+    </div>
+
+  </main>
+
+</body>
+</html>
